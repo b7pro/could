@@ -1,10 +1,21 @@
+import {Article} from "@/utils/type"
 
-const ArticlesPage = () => {
-    return ( 
-        <>
-            <h1>articles page</h1>
-        </>
-     );
-}
- 
+const ArticlesPage = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const result: Article[] = await response.json();
+
+  return (
+    <>
+      <section className="container m-auto px-5 ">
+        {result.map((item) => (
+          <div key={item.id}>
+            <h1>{item.title}</h1>
+            <p>{item.body}</p>
+          </div>
+        ))}
+      </section>
+    </>
+  );
+};
+
 export default ArticlesPage;
