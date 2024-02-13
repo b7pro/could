@@ -9,10 +9,10 @@ const ArticlesPage = async () => {
 
   return (
     <>
-      <section className="container m-auto px-5 ">
+      <section className='container  m-auto px-5'>
         {result.map((item) => (
-          <div key={item.id}>
-            <h1>{item.title}</h1>
+          <div key={item.id} className="p-5 rounded-lg my-1 bg-gray-200 w-full md:w-2/5 lg:w-1/4">
+            <h1 >{item.title}</h1>
             <p>{item.body}</p>
           </div>
         ))}
